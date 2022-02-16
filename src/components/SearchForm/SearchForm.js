@@ -10,8 +10,6 @@ export const SearchForm = () => {
 
     const apyKey = "ae82373d19e1495298fc0b89031984fc";
 
-
-
     const handleChange = (e) => {
         setinputValue(e.target.value);
     }
@@ -32,7 +30,6 @@ export const SearchForm = () => {
             }
         };
         axios.request(options).then(function (response) {
-            console.log(response.data)
             const { menuItems } = response.data;
             setMenuList(menuItems)
         }).catch(function (error) {
@@ -41,35 +38,33 @@ export const SearchForm = () => {
 
     }, [queryValue])
 
-
     return (
-
         <div className='container'>
             <div className="row p-5 d-flex justify-content-center">
-                <div className='col-5 bg-white py-3'>
+                <div className='col-5'>
                     <h3>Busque su comida favorita</h3>
                     <form className='form-group'
                         onSubmit={handleSubmit}
                     >
-
                         <input
                             type="text"
                             className="form-control"
                             placeholder="Burger"
                             onChange={handleChange}
                         />
-
                     </form>
-
                 </div>
             </div>
-          
+
+            <div className="row row-cols-1 row-cols-md-2 g-4">
                 {
                     menuList.map((menu) => {
-                        return <ListOfItem key={menu.id} menu={menu}/>
+                        return (
+                            <ListOfItem key={menu.id} menu={menu} />
+                        )
                     })
                 }
-                
+            </div>
         </div>
 
 
