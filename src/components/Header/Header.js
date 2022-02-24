@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+export const Header = ({menu}) => {
 
-export const Header = () => {
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             <div className="container-fluid">
@@ -11,7 +11,7 @@ export const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ms-auto">
                         <a className="nav-link" href="#">Carta</a>
-                        <a className="nav-link active" aria-current="page" href="#">Menú <span className="badge bg-primary">4</span>
+                        <a className="nav-link" aria-current="page" href="#">Menú <span className="badge bg-primary">{menu.length}</span>
                         </a>
                         <a className="nav-link" href="#">Iniciar Sesión</a>
                     </div>

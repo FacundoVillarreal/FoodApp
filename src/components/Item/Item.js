@@ -1,17 +1,44 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
+// import { functionReducer } from './functionReducer'
+
+// const init = () => {
+//     return JSON.parse(localStorage.getItem('menuList')) || [];
+// }
 
 export const Item = ({ id, image, title, restauran }) => {
-    const [menuList, setmenuList] = useState([]);
+
+    // const [menu, dispatch] = useReducer(functionReducer, [], init)
+    // const [listId, setListId] = useState([])    
+
+    // useEffect(() => {
+    //     localStorage.setItem('menuList', JSON.stringify(menu));
+    // }, [menu]);
 
 
+    const handleClick = (e, id) => {
+        // e.preventDefault();
 
-    const handleClick = (id) => {
-        setmenuList([...menuList, id])
-        // setMessage(prevState => {
-        //     return { ...prevState, message: val }
-        // });
-        console.log(menuList)
+        // setListId(i => {
+        //     console.log(i)
+        //     return [
+        //         ...i,
+        //         id
+        //     ]
+        // })
+        // console.log(listId)
+        // const newItem = {
+        //     id: id
+        // };
+
+        // const action = {
+        //     type: 'add',
+        //     payload: newItem
+        // };
+
+        // dispatch(action);
+
     }
+
 
     return (
         <div className='col'>
@@ -29,7 +56,6 @@ export const Item = ({ id, image, title, restauran }) => {
                             <button
                                 className="btn btn-primary mx-1"
                                 type="button"
-                                onClick={() => handleClick(id)}
                             >
                                 Agregar al menú
                             </button>
